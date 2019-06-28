@@ -36,36 +36,36 @@
       a: 'acfun.tv',
       m: 'map.baidu.com',
     }
+    var hashInLocalStorage = JSON.parse(localStorage.getItem('localHash') || 'null')
+    if (hashInLocalStorage) {
+      hash = hashInLocalStorage
+    }
     var index = 0
     while (index < keys.length) {
-      var div = document.createElement('div')
-      div.className = 'row'
-      idMain.appendChild(div)
+      var div1 = document.createElement('div')
+      idMain.appendChild(div1)
 
       var row = keys[index]
 
       var index2 = 0
       while (index2 < row.length) {
-        var kbd = document.createElement('kbd')
-        kbd.textContent = row[index2]
-        kbd.className = 'key'
-        div.appendChild(kbd)
+        var kbd1 = document.createElement('kbd')
+        kbd1.textContent = row[index2]
+        div1.appendChild(kbd1)
 
-        var button = document.createElement('button')
-        button.textContent = 'EDIT'
-        button.onclick = (e) => {
-          var key = e['target']['id']
-          var x = prompt('输入网址')
-          hash[key] = x
-          localStorage.getItem()
+        var button1 = document.createElement('button')
+        button1.textContent = 'EDIT'
+        button1.id = row[index2]
+        button1.onclick = function (event) {
+          var c = event.target.id
+          var x = prompt('请输入要跳转的网址')
+          hash[c] = x
+          localStorage.setItem('localHash', JSON.stringify(hash));
+          console.log(localStorage)
+          console.log(hash)
         }
-        kbd.appendChild(button)
-
-        var img = document.createElement('img')
-        img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
-        kbd.appendChild(img)
-        console.log('img', img)
-
+        kbd1.appendChild(button1)
+        div1.appendChild(kbd1)
         index2 += 1
       }
 
