@@ -33,7 +33,7 @@
       i: 'iqiyi.com',
       o: 'opera.com',
       p: undefined,
-      a: 'acfun.tv',
+      a: 'www.acfun.cn',
       m: 'map.baidu.com',
     }
     var hashInLocalStorage = JSON.parse(localStorage.getItem('localHash') || 'null')
@@ -43,6 +43,7 @@
     var index = 0
     while (index < keys.length) {
       var div1 = document.createElement('div')
+      div1.className = 'row'
       idMain.appendChild(div1)
 
       var row = keys[index]
@@ -50,8 +51,24 @@
       var index2 = 0
       while (index2 < row.length) {
         var kbd1 = document.createElement('kbd')
-        kbd1.textContent = row[index2]
+        var span = document.createElement('span')
+        span.className = 'text'
+        kbd1.className = 'key'
+        span.textContent = row[index2]
+        kbd1.appendChild(span)
         div1.appendChild(kbd1)
+
+       
+        
+
+        var img = document.createElement('img')
+        if (hash[row[index2]]) {
+          img.src = `http://${hash[row[index2]]}/favicon.ico`
+        } else {
+          img.src = 'https://via.placeholder.com/20x20'
+        }
+        console.log(img)
+        kbd1.appendChild(img)
 
         var button1 = document.createElement('button')
         button1.textContent = 'EDIT'
@@ -61,8 +78,6 @@
           var x = prompt('请输入要跳转的网址')
           hash[c] = x
           localStorage.setItem('localHash', JSON.stringify(hash));
-          console.log(localStorage)
-          console.log(hash)
         }
         kbd1.appendChild(button1)
         div1.appendChild(kbd1)
@@ -75,7 +90,6 @@
       var key = e.key
       var website = hash[key]
 
-      // location.href = 'http://' + website
       window.open('http://' + website, '_blank')
     }
   </script>
