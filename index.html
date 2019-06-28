@@ -38,27 +38,40 @@
     }
     var index = 0
     while (index < keys.length) {
-      var div1 = document.createElement('div')
-      idMain.appendChild(div1)
+      var div = document.createElement('div')
+      div.className = 'row'
+      idMain.appendChild(div)
 
       var row = keys[index]
 
       var index2 = 0
       while (index2 < row.length) {
-        var kbd1 = document.createElement('kbd')
-        kbd1.textContent = row[index2]
-        div1.appendChild(kbd1)
+        var kbd = document.createElement('kbd')
+        kbd.textContent = row[index2]
+        kbd.className = 'key'
+        div.appendChild(kbd)
 
-        var button1 = document.createElement('button')
-        button1.textContent = 'EDIT'
-        kbd1.appendChild(button1)
+        var button = document.createElement('button')
+        button.textContent = 'EDIT'
+        button.onclick = (e) => {
+          var key = e['target']['id']
+          var x = prompt('输入网址')
+          hash[key] = x
+          localStorage.getItem()
+        }
+        kbd.appendChild(button)
+
+        var img = document.createElement('img')
+        img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
+        kbd.appendChild(img)
+        console.log('img', img)
 
         index2 += 1
       }
 
       index = index + 1
     }
-    document.onkeypress = function(e) {
+    document.onkeypress = function (e) {
       var key = e.key
       var website = hash[key]
 
