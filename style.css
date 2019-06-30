@@ -5,11 +5,11 @@
 
 @font-face {
     font-family: "FZXiJinLJW";
-    src: url(/assets/FZXiJinLJW.ttf) format("truetype");
+    src: url(/source/FZXiJinLJW.TTF) format("truetype");
 }
 
 body {
-    background: #e5e5e5 url('/assets/bg-cat-min.png') no-repeat center center;
+    background: #e5e5e5 url('/source/bg-cat-min.png') no-repeat center center;
     background-size: cover;
 }
 
