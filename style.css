@@ -1,91 +1,104 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
+@font-face {
+    font-family: "FZXiJinLJW";
+    src: url(/assets/FZXiJinLJW.ttf) format("truetype");
+}
+
 body {
-  background: #e5e5e5 url('./bg-cat-min.png') no-repeat center center; 
-  background-size: cover;
+    background: #e5e5e5 url('/assets/bg-cat-min.png') no-repeat center center;
+    background-size: cover;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 kbd {
-  border: 1px solid red;
-  width: 4em;
-  height: 4em;
-  display: inline-block;
-  text-transform: uppercase;
-  position: relative;
+    border: 1px solid red;
+    width: 4em;
+    height: 4em;
+    display: inline-block;
+    text-transform: uppercase;
+    position: relative;
 }
 
 kbd>button {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
 }
 
 kbd:hover>button {
-  display: inline-block;
+    display: inline-block;
 }
 
 main {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .wrapper {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
 }
 
 #idMain {
-  display: inline-block;
+    display: inline-block;
 }
 
 #idMain>div:nth-child(2) {
-  margin-left: -22px;
+    margin-left: -22px;
 }
 
 #idMain>div:nth-child(3) {
-  margin-left: -80px;
+    margin-left: -80px;
 }
 
 .key {
-  width: 50px;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(41, 41, 41, 1) 0%, rgba(18, 18, 18, 1) 100%);
-  color: #cfcfcf;
-  border: 1px solid #2c2c2c;
-  border-radius: 6px;
-  box-shadow: 0 0 1px #1A1B1C, 0 0 2px #1f2020, 0 3px 0 2px #080808;
-  font-size: 18px;
-  font-family: helvetica;
-  position: relative;
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(41, 41, 41, 1) 0%, rgba(18, 18, 18, 1) 100%);
+    color: #cfcfcf;
+    border: 1px solid #2c2c2c;
+    border-radius: 6px;
+    box-shadow: 0 0 1px #1A1B1C, 0 0 2px #1f2020, 0 3px 0 2px #080808;
+    font-size: 18px;
+    font-family: helvetica;
+    position: relative;
 }
 
 .row {
-  margin: 20px;
+    margin: 20px;
 }
 
 .row .key {
-  margin: 0 10px;
+    margin: 0 10px;
 }
 
 .key img {
-  width: 16px;
-  position: absolute;
-  bottom: 2px;
-  left: 4px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 2px;
+    left: 4px;
 }
 
 .key .text {
-  position: absolute;
-  left: 4px;
-  top: 2px;
+    position: absolute;
+    left: 4px;
+    top: 2px;
+}
+
+button.edit {
+    border-radius: 3px;
+    font-size: 12px;
+    color: #2c2c2c;
 }
