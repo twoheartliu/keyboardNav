@@ -76,6 +76,10 @@
      var img = t('img')
      if (domain) {
          img.src = `http://${domain}/favicon.ico`
+         img.className = 'ableToClick'
+         img.onclick = () => {
+             window.open('http://' + domain, '_blank')
+         }
      } else {
          img.src = 'https://via.placeholder.com/20x20'
      }
