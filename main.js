@@ -25,7 +25,7 @@
          e: 'ele.me',
          r: 'reactjs.org',
          t: 'twitter.com',
-         y: 'youtube.cn',
+         y: 'youtube.com',
          u: 'uc.cn',
          i: 'iqiyi.com',
          o: 'opera.com',
