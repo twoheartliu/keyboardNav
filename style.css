@@ -47,8 +47,8 @@ header {
     position: absolute;
     /* background: #499682; */
     left: 50%;
-    top: 5vh;
-    transform: translate(-50%, 5vh);
+    top: 3vh;
+    transform: translate(-50%, 3vh);
     line-height: 1.5;
 }
 
